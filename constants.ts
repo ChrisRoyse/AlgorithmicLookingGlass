@@ -232,7 +232,7 @@ export const SLIDES: SlideContent[] = [
     title: "Somatic Markers of Disruption",
     subtitle: "From Psychological Theory to Embodied Reality",
     bullets: [
-      "1. The Gen Z Stare & Filter Face",
+      "1. Filter Face",
       "2. Main Character Syndrome",
       "3. TikTok Voice & Algo-Speak",
       "4. The iPad Kid Fidget",
@@ -246,7 +246,6 @@ export const SLIDES: SlideContent[] = [
     title: "The Face of the Algorithm",
     image: "https://images.unsplash.com/photo-1616091093747-4d80d2252479?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
     bullets: [
-      "The Gen Z Stare: Dissociative, flat affect as a defense against context collapse.",
       "Filter Face: 80% of girls use beauty filters by age 13 (ASPS, 2024).",
       "Mechanism: Visual Habituation. The filtered self becomes the perceptual baseline.",
       "Result: Premature aesthetic foreclosure before physical development is complete."
@@ -311,13 +310,6 @@ export const SLIDES: SlideContent[] = [
   },
   {
     id: 26,
-    type: SlideType.TITLE,
-    title: "The Verdict",
-    subtitle: "Algorithms do not erase identity exploration; they cannibalize it. They consume the energy of exploration (time, attention, cognitive load) and divert it into loops of optimization and rumination. The adolescent is not \"doing nothing\"; they are doing too much of the wrong thing—perfecting a mask rather than finding a face.",
-    footer: "Conclusion"
-  },
-  {
-    id: 27,
     type: SlideType.TITLE,
     title: "Thank You",
     subtitle: "Questions & Discussion",
