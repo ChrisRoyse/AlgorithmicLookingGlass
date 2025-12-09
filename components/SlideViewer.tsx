@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { SlideContent, SlideType } from '../types';
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, LabelList } from 'recharts';
@@ -127,22 +126,24 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ slide }) => {
 
       case SlideType.SPLIT_IMAGE:
         return (
-          <div className="grid grid-cols-2 gap-16 h-full items-center p-16">
-            <div className="space-y-10">
-              <h2 className="text-6xl font-serif font-bold text-kstate-purple leading-tight">
-                {slide.title}
-              </h2>
-              <div className="w-20 h-1.5 bg-gray-200 rounded-full"></div>
-              <ul className="space-y-6">
-                {slide.bullets?.map((bullet, idx) => (
-                  <li key={idx} className="flex items-start text-2xl text-gray-700 leading-snug">
-                    <span className="mr-4 text-kstate-purple text-3xl mt-[-2px]">•</span>
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
+          <div className="flex h-full w-full">
+            <div className="w-1/2 flex flex-col justify-center px-20">
+              <div className="space-y-8">
+                <h2 className="text-6xl font-serif font-bold text-kstate-purple leading-tight">
+                  {slide.title}
+                </h2>
+                <div className="w-20 h-1.5 bg-gray-200 rounded-full"></div>
+                <ul className="space-y-6">
+                  {slide.bullets?.map((bullet, idx) => (
+                    <li key={idx} className="flex items-start text-2xl text-gray-700 leading-snug">
+                      <span className="mr-4 text-kstate-purple text-3xl mt-[-2px] flex-shrink-0">•</span>
+                      <span>{bullet}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="h-full py-8">
+            <div className="w-1/2 h-full p-16">
               {slide.image && (
                 <div className="h-full w-full relative group">
                   <div className="absolute inset-0 bg-kstate-purple transform translate-x-4 translate-y-4 rounded-xl opacity-10"></div>
@@ -235,12 +236,12 @@ export const SlideViewer: React.FC<SlideViewerProps> = ({ slide }) => {
         <div className="absolute top-0 right-0 w-[50vh] h-[50vh] bg-kstate-purple opacity-5 rounded-bl-full pointer-events-none z-0"></div>
       )}
       
-      <div className="flex-grow relative z-10">
+      <div className="flex-grow relative z-10 flex flex-col min-h-0">
         {renderContent()}
       </div>
 
       {/* Footer */}
-      <div className="h-16 px-16 flex justify-between items-center text-gray-400 text-sm font-sans border-t border-gray-100 bg-white/50 backdrop-blur-sm z-20">
+      <div className="h-16 px-16 flex justify-between items-center text-gray-400 text-sm font-sans border-t border-gray-100 bg-white/50 backdrop-blur-sm z-20 flex-shrink-0">
         <span className="uppercase tracking-widest text-xs font-bold text-gray-300">{slide.footer || "The Algorithmic Looking Glass"}</span>
         <span className="font-mono">{slide.id}</span>
       </div>
